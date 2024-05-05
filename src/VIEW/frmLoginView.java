@@ -27,13 +27,13 @@ public class frmLoginView extends javax.swing.JFrame {
         lblSenha = new javax.swing.JLabel();
         txtSenha = new Component.TextFieldSenha();
         buttonEsqueci = new Component.ButtonEsqueci();
-        jPanel5 = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        linhaOu = new javax.swing.JPanel();
+        linhaOu2 = new javax.swing.JPanel();
+        lblOu = new javax.swing.JLabel();
         txtEmail = new Component.TextFieldEmail();
         buttonEntrar1 = new Component.ButtonEntrar();
         buttonCadastre1 = new Component.ButtonCadastre();
-        jLabel2 = new javax.swing.JLabel();
+        lblCopyright = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SolarSun");
@@ -81,6 +81,7 @@ public class frmLoginView extends javax.swing.JFrame {
         lblSenha.setForeground(new java.awt.Color(255, 255, 255));
         lblSenha.setText("Senha");
 
+        txtSenha.setFont(new java.awt.Font("sansserif", 0, 13)); // NOI18N
         txtSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtSenhaActionPerformed(evt);
@@ -91,38 +92,41 @@ public class frmLoginView extends javax.swing.JFrame {
         buttonEsqueci.setText("Esqueci a Senha");
         buttonEsqueci.setText("<html><u>Esqueci a Senha</u>");
 
-        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel5.setPreferredSize(new java.awt.Dimension(120, 2));
+        linhaOu.setBackground(new java.awt.Color(255, 255, 255));
+        linhaOu.setPreferredSize(new java.awt.Dimension(120, 2));
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout linhaOuLayout = new javax.swing.GroupLayout(linhaOu);
+        linhaOu.setLayout(linhaOuLayout);
+        linhaOuLayout.setHorizontalGroup(
+            linhaOuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 120, Short.MAX_VALUE)
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        linhaOuLayout.setVerticalGroup(
+            linhaOuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 2, Short.MAX_VALUE)
         );
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        linhaOu2.setBackground(new java.awt.Color(255, 255, 255));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout linhaOu2Layout = new javax.swing.GroupLayout(linhaOu2);
+        linhaOu2.setLayout(linhaOu2Layout);
+        linhaOu2Layout.setHorizontalGroup(
+            linhaOu2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 120, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        linhaOu2Layout.setVerticalGroup(
+            linhaOu2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 2, Short.MAX_VALUE)
         );
 
-        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("ou");
+        lblOu.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        lblOu.setForeground(new java.awt.Color(255, 255, 255));
+        lblOu.setText("ou");
+
+        txtEmail.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
 
         buttonEntrar1.setText("Entrar");
+        buttonEntrar1.setFocusable(false);
         buttonEntrar1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         buttonEntrar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,12 +135,18 @@ public class frmLoginView extends javax.swing.JFrame {
         });
 
         buttonCadastre1.setText("Cadastre-se");
+        buttonCadastre1.setFocusable(false);
         buttonCadastre1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        buttonCadastre1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonCadastre1ActionPerformed(evt);
+            }
+        });
 
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("SansSerif", 0, 10)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Copyright @ 2024 SolarSun");
+        lblCopyright.setBackground(new java.awt.Color(255, 255, 255));
+        lblCopyright.setFont(new java.awt.Font("SansSerif", 0, 10)); // NOI18N
+        lblCopyright.setForeground(new java.awt.Color(255, 255, 255));
+        lblCopyright.setText("Copyright @ 2024 SolarSun");
 
         javax.swing.GroupLayout PanelPrincipalLayout = new javax.swing.GroupLayout(PanelPrincipal);
         PanelPrincipal.setLayout(PanelPrincipalLayout);
@@ -155,16 +165,16 @@ public class frmLoginView extends javax.swing.JFrame {
                     .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(buttonEntrar1, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPrincipalLayout.createSequentialGroup()
-                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(linhaOu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel1)
+                        .addComponent(lblOu)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(linhaOu2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(buttonCadastre1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(50, Short.MAX_VALUE))
             .addGroup(PanelPrincipalLayout.createSequentialGroup()
                 .addGap(124, 124, 124)
-                .addComponent(jLabel2)
+                .addComponent(lblCopyright)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PanelPrincipalLayout.setVerticalGroup(
@@ -193,18 +203,18 @@ public class frmLoginView extends javax.swing.JFrame {
                     .addGroup(PanelPrincipalLayout.createSequentialGroup()
                         .addGap(8, 8, 8)
                         .addGroup(PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel1))
+                            .addComponent(linhaOu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(linhaOu2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(lblOu))
                 .addGap(34, 34, 34)
                 .addComponent(buttonCadastre1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
-                .addComponent(jLabel2)
+                .addComponent(lblCopyright)
                 .addGap(30, 30, 30))
         );
 
-        jPanel5.getAccessibleContext().setAccessibleName("");
-        jPanel5.getAccessibleContext().setAccessibleDescription("");
+        linhaOu.getAccessibleContext().setAccessibleName("");
+        linhaOu.getAccessibleContext().setAccessibleDescription("");
 
         getContentPane().add(PanelPrincipal);
         PanelPrincipal.setBounds(900, 0, 380, 720);
@@ -218,8 +228,15 @@ public class frmLoginView extends javax.swing.JFrame {
     }//GEN-LAST:event_txtSenhaActionPerformed
 
     private void buttonEntrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEntrar1ActionPerformed
-        // TODO add your handling code here:
+        Logar();
     }//GEN-LAST:event_buttonEntrar1ActionPerformed
+
+    private void buttonCadastre1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCadastre1ActionPerformed
+        frmRegistroView objFrmRegister = new frmRegistroView();
+        objFrmRegister.setVisible(true);
+
+        dispose();
+    }//GEN-LAST:event_buttonCadastre1ActionPerformed
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -234,14 +251,14 @@ public class frmLoginView extends javax.swing.JFrame {
     private Component.ButtonCadastre buttonCadastre1;
     private Component.ButtonEntrar buttonEntrar1;
     private Component.ButtonEsqueci buttonEsqueci;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel5;
+    private javax.swing.JLabel lblCopyright;
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblEntre;
+    private javax.swing.JLabel lblOu;
     private javax.swing.JLabel lblSenha;
     private javax.swing.JPanel linhaLogo;
+    private javax.swing.JPanel linhaOu;
+    private javax.swing.JPanel linhaOu2;
     private Component.TextFieldEmail txtEmail;
     private Component.TextFieldSenha txtSenha;
     // End of variables declaration//GEN-END:variables

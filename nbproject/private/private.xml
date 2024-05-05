@@ -12,7 +12,14 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Andre%20Souza/Documents/ProjetoA3/SolarSun/src/VIEW/frmLoginView.java</file>
+            <file>file:/C:/Users/Andre%20Souza/Documents/ProjetoA3/SolarSun/src/DAO/UsuarioDAO.java</file>
+            <file>file:/C:/Users/Andre%20Souza/Documents/ProjetoA3/SolarSun/src/Component/ButtonEntrar.java</file>
+            <file>file:/C:/Users/Andre%20Souza/Documents/ProjetoA3/SolarSun/src/Component/TextFieldEmail.java</file>
+            <file>file:/C:/Users/Andre%20Souza/Documents/ProjetoA3/SolarSun/src/VIEW/frmRegisterView.java</file>
+            <file>file:/C:/Users/Andre%20Souza/Documents/ProjetoA3/SolarSun/src/Component/ButtonEsqueci.java</file>
+            <file>file:/C:/Users/Andre%20Souza/Documents/ProjetoA3/SolarSun/src/Component/TextFieldSenha.java</file>
+            <file>file:/C:/Users/Andre%20Souza/Documents/ProjetoA3/SolarSun/src/Component/ButtonCadastre.java</file>
+            <file>file:/C:/Users/Andre%20Souza/Documents/ProjetoA3/SolarSun/src/Component/PanelLogin.java</file>
         </group>
     </open-files>
 </project-private>
