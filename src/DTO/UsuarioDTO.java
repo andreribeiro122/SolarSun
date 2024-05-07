@@ -82,7 +82,5 @@ public class UsuarioDTO {
 
     public void setSenha(String senha) {
         this.senha = senha;
-    }
-
-    
+    }   
 }

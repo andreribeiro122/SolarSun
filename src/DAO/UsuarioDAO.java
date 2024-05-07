@@ -75,6 +75,7 @@ public class UsuarioDAO {
             return null;
         }
     }
+    
     public void registroUsuario(UsuarioDTO objUsuarioDTO) {
         conn = new ConexaoDAO().conectaBD();
        
