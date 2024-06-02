@@ -1,16 +1,7 @@
-package DTO;
+package solarsun.DTO;
 
 public class UsuarioDTO {
-    private int id_cliente;
-    private String nome, email, cpf, celular, endereco, numero, complemento, cep, senha;
-
-    public int getId_cliente() {
-        return id_cliente;
-    }
-
-    public void setId_cliente(int id_cliente) {
-        this.id_cliente = id_cliente;
-    }
+    private String perfil, nome, email, cpf, celular, endereco, numero, complemento, cep, senha;
 
     public String getNome() {
         return nome;
@@ -82,5 +73,13 @@ public class UsuarioDTO {
 
     public void setSenha(String senha) {
         this.senha = senha;
-    }   
+    }
+
+    public String getPerfil() {
+        return perfil;
+    }
+
+    public void setPerfil(String perfil) {
+        this.perfil = perfil;
+    }
 }
