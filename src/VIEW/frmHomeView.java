@@ -1,21 +1,30 @@
 package VIEW;
 
+import DAO.ClienteDAO;
 import java.awt.Toolkit;
 
 public class frmHomeView extends javax.swing.JFrame {
 
     public frmHomeView() {
         initComponents();
-        
-        //lblHomeNome.setText(lblHomeNome.getName());
 
         Seticon();
+        
+        ClienteDAO objClienteDAO = new ClienteDAO();
+        boolean veriAdm = objClienteDAO.verificaoADM();
+        
+        if (veriAdm == false) {
+            btnADM.setVisible(false);
+        } else {
+            btnADM.setVisible(true);
+        }
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel2 = new javax.swing.JPanel();
         BarraLateral = new javax.swing.JPanel();
         btnHomeLogo = new javax.swing.JButton();
         LinhaLateral = new javax.swing.JPanel();
@@ -46,8 +55,19 @@ public class frmHomeView extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        btnSobreNos = new javax.swing.JButton();
+        btnSuporte = new javax.swing.JButton();
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SolarSun - Home");
@@ -107,6 +127,11 @@ public class frmHomeView extends javax.swing.JFrame {
         btnDashboard.setContentAreaFilled(false);
         btnDashboard.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDashboard.setFocusable(false);
+        btnDashboard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDashboardActionPerformed(evt);
+            }
+        });
         BarraLateral.add(btnDashboard);
         btnDashboard.setBounds(16, 171, 38, 38);
 
@@ -116,6 +141,11 @@ public class frmHomeView extends javax.swing.JFrame {
         btnServices.setContentAreaFilled(false);
         btnServices.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnServices.setFocusable(false);
+        btnServices.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnServicesActionPerformed(evt);
+            }
+        });
         BarraLateral.add(btnServices);
         btnServices.setBounds(16, 232, 38, 38);
 
@@ -287,25 +317,30 @@ public class frmHomeView extends javax.swing.JFrame {
         jButton4.setFocusable(false);
         jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 520, -1, -1));
 
-        jButton5.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(0, 0, 0));
-        jButton5.setText("Sobre Nós");
-        jButton5.setBorder(null);
-        jButton5.setBorderPainted(false);
-        jButton5.setContentAreaFilled(false);
-        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton5.setFocusable(false);
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
+        btnSobreNos.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
+        btnSobreNos.setForeground(new java.awt.Color(0, 0, 0));
+        btnSobreNos.setText("Sobre Nós");
+        btnSobreNos.setBorder(null);
+        btnSobreNos.setBorderPainted(false);
+        btnSobreNos.setContentAreaFilled(false);
+        btnSobreNos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSobreNos.setFocusable(false);
+        jPanel1.add(btnSobreNos, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
 
-        jButton6.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(0, 0, 0));
-        jButton6.setText("Suporte ao Cliente");
-        jButton6.setBorder(null);
-        jButton6.setBorderPainted(false);
-        jButton6.setContentAreaFilled(false);
-        jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton6.setFocusable(false);
-        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, -1, -1));
+        btnSuporte.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
+        btnSuporte.setForeground(new java.awt.Color(0, 0, 0));
+        btnSuporte.setText("Suporte ao Cliente");
+        btnSuporte.setBorder(null);
+        btnSuporte.setBorderPainted(false);
+        btnSuporte.setContentAreaFilled(false);
+        btnSuporte.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSuporte.setFocusable(false);
+        btnSuporte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSuporteActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnSuporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, -1, -1));
         jPanel1.add(btnAvatar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 30, 40, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 1210, 720));
@@ -315,24 +350,18 @@ public class frmHomeView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnHomeLogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeLogoActionPerformed
-        frmHomeView objHomeView = new frmHomeView();
-        objHomeView.setVisible(true);
 
-        dispose();
     }//GEN-LAST:event_btnHomeLogoActionPerformed
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         frmLoginView objLoginView = new frmLoginView();
         objLoginView.setVisible(true);
 
-        dispose();
+        this.dispose();
     }//GEN-LAST:event_btnLogoutActionPerformed
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
-        frmHomeView objHomeView = new frmHomeView();
-        objHomeView.setVisible(true);
 
-        dispose();
     }//GEN-LAST:event_btnHomeActionPerformed
 
     private void btnConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfigActionPerformed
@@ -343,8 +372,32 @@ public class frmHomeView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnConfigActionPerformed
 
     private void btnADMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnADMActionPerformed
-        // TODO add your handling code here:
+        frmClientesView objClientesView = new frmClientesView();
+        objClientesView.setVisible(true);
+        
+        this.dispose();
     }//GEN-LAST:event_btnADMActionPerformed
+
+    private void btnServicesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnServicesActionPerformed
+       frmServicoView objServicoView = new frmServicoView();
+       objServicoView.setVisible(true);
+       
+       this.dispose();
+    }//GEN-LAST:event_btnServicesActionPerformed
+
+    private void btnDashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDashboardActionPerformed
+        frmDashboardView objDashboardView = new frmDashboardView();
+        objDashboardView.setVisible(true);
+        
+        this.dispose();
+    }//GEN-LAST:event_btnDashboardActionPerformed
+
+    private void btnSuporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuporteActionPerformed
+        frmSuporteView objSuporteView = new frmSuporteView();
+        objSuporteView.setVisible(true);
+        
+        this.dispose();
+    }//GEN-LAST:event_btnSuporteActionPerformed
 
     public static void main(String args[]) {
         try {
@@ -375,7 +428,7 @@ public class frmHomeView extends javax.swing.JFrame {
     private javax.swing.JPanel BarraLateral;
     private javax.swing.JPanel LinhaLateral;
     public static javax.swing.JButton btnADM;
-    public static final Component.ButtonEntrar btnAvatar = new Component.ButtonEntrar();
+    public static final Assets.Component.ButtonEntrar btnAvatar = new Assets.Component.ButtonEntrar();
     private javax.swing.JButton btnConfig;
     private javax.swing.JButton btnDashboard;
     private javax.swing.JLabel btnExtrato;
@@ -383,12 +436,12 @@ public class frmHomeView extends javax.swing.JFrame {
     private javax.swing.JButton btnHomeLogo;
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnServices;
+    private javax.swing.JButton btnSobreNos;
+    private javax.swing.JButton btnSuporte;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -405,6 +458,7 @@ public class frmHomeView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     public static final javax.swing.JLabel lblHomeNome = new javax.swing.JLabel();
     // End of variables declaration//GEN-END:variables
     private void Seticon() {

@@ -1,4 +1,4 @@
-package solarsun.Assets.Component;
+package Assets.Component;
 
 import java.awt.Color;
 import java.awt.Graphics;

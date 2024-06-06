@@ -1,4 +1,4 @@
-package Component;
+package Assets.Component;
 
 import java.awt.Color;
 import java.awt.Cursor;
@@ -7,8 +7,6 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
 import javax.swing.JButton;
-import javax.swing.BorderFactory;
-import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 
 public class ButtonEntrar extends JButton {

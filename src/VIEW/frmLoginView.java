@@ -3,6 +3,7 @@ package VIEW;
 import VIEW.frmRegisterView;
 import java.awt.Toolkit;
 import DAO.LoginDAO;
+import java.awt.Component;
 
 public class frmLoginView extends javax.swing.JFrame {
     
@@ -22,16 +23,16 @@ public class frmLoginView extends javax.swing.JFrame {
         Linha = new javax.swing.JPanel();
         lblEntre = new javax.swing.JLabel();
         lblEmail = new javax.swing.JLabel();
-        txtEmail = new solarsun.Assets.Component.TextFieldEmail();
         lblSenha = new javax.swing.JLabel();
-        txtSenha = new solarsun.Assets.Component.TextFieldSenha();
         btnEsqueci = new javax.swing.JButton();
-        btnEntrar = new Component.ButtonEntrar();
         PanelLinha2 = new javax.swing.JPanel();
         PanelLinha3 = new javax.swing.JPanel();
         lblOu = new javax.swing.JLabel();
-        btnCadastrese = new Component.ButtonCadastre();
         lblCopy = new javax.swing.JLabel();
+        txtEmail = new Assets.Component.TextFieldEmail();
+        txtSenha = new Assets.Component.TextFieldSenha();
+        btnEntrar = new Assets.Component.ButtonEntrar();
+        btnCadastre = new Assets.Component.ButtonCadastre();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SolarSun - Entrar");
@@ -61,9 +62,6 @@ public class frmLoginView extends javax.swing.JFrame {
         lblEmail.setForeground(new java.awt.Color(255, 255, 255));
         lblEmail.setText("Email");
 
-        txtEmail.setForeground(new java.awt.Color(0, 0, 0));
-        txtEmail.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
-
         lblSenha.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
         lblSenha.setForeground(new java.awt.Color(255, 255, 255));
         lblSenha.setText("Senha");
@@ -77,15 +75,6 @@ public class frmLoginView extends javax.swing.JFrame {
         btnEsqueci.setContentAreaFilled(false);
         btnEsqueci.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
-        btnEntrar.setText("Entrar");
-        btnEntrar.setFocusable(false);
-        btnEntrar.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
-        btnEntrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEntrarActionPerformed(evt);
-            }
-        });
-
         PanelLinha2.setBackground(new java.awt.Color(255, 255, 255));
 
         PanelLinha3.setBackground(new java.awt.Color(255, 255, 255));
@@ -95,25 +84,44 @@ public class frmLoginView extends javax.swing.JFrame {
         lblOu.setForeground(new java.awt.Color(255, 255, 255));
         lblOu.setText("ou");
 
-        btnCadastrese.setText("Cadastre-se");
-        btnCadastrese.setFocusable(false);
-        btnCadastrese.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
-        btnCadastrese.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCadastreseActionPerformed(evt);
-            }
-        });
-
         lblCopy.setBackground(new java.awt.Color(255, 255, 255));
         lblCopy.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         lblCopy.setForeground(new java.awt.Color(255, 255, 255));
         lblCopy.setText("Copyright @ 2024 SolarSun");
+
+        txtEmail.setForeground(new java.awt.Color(0, 0, 0));
+        txtEmail.setFont(new java.awt.Font("Microsoft YaHei", 1, 12)); // NOI18N
+
+        txtSenha.setForeground(new java.awt.Color(0, 0, 0));
+        txtSenha.setFont(new java.awt.Font("Microsoft YaHei", 1, 12)); // NOI18N
+
+        btnEntrar.setText("Entrar");
+        btnEntrar.setFocusable(false);
+        btnEntrar.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
+        btnEntrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEntrarActionPerformed(evt);
+            }
+        });
+
+        btnCadastre.setText("Cadastre-se");
+        btnCadastre.setFocusable(false);
+        btnCadastre.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
+        btnCadastre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastreActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelLoginLayout = new javax.swing.GroupLayout(PanelLogin);
         PanelLogin.setLayout(PanelLoginLayout);
         PanelLoginLayout.setHorizontalGroup(
             PanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelLoginLayout.createSequentialGroup()
+                .addGap(110, 110, 110)
+                .addComponent(lblCopy)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLoginLayout.createSequentialGroup()
                 .addContainerGap(50, Short.MAX_VALUE)
                 .addGroup(PanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnEsqueci)
@@ -122,21 +130,17 @@ public class frmLoginView extends javax.swing.JFrame {
                     .addComponent(lblEntre)
                     .addComponent(Logo, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(Linha, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-                    .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtSenha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnEntrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(PanelLoginLayout.createSequentialGroup()
                         .addComponent(PanelLinha2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lblOu)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(PanelLinha3, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnCadastrese, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtSenha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEntrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCadastre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(50, 50, 50))
-            .addGroup(PanelLoginLayout.createSequentialGroup()
-                .addGap(110, 110, 110)
-                .addComponent(lblCopy)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PanelLoginLayout.setVerticalGroup(
             PanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -151,11 +155,11 @@ public class frmLoginView extends javax.swing.JFrame {
                 .addComponent(lblEmail)
                 .addGap(15, 15, 15)
                 .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addGap(45, 45, 45)
                 .addComponent(lblSenha)
                 .addGap(15, 15, 15)
                 .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
+                .addGap(18, 18, 18)
                 .addComponent(btnEsqueci)
                 .addGap(35, 35, 35)
                 .addComponent(btnEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -168,9 +172,9 @@ public class frmLoginView extends javax.swing.JFrame {
                     .addGroup(PanelLoginLayout.createSequentialGroup()
                         .addGap(30, 30, 30)
                         .addComponent(lblOu)))
-                .addGap(35, 35, 35)
-                .addComponent(btnCadastrese, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addComponent(btnCadastre, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45)
                 .addComponent(lblCopy)
                 .addGap(25, 25, 25))
         );
@@ -181,13 +185,6 @@ public class frmLoginView extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCadastreseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastreseActionPerformed
-        frmRegisterView objRegisterView = new frmRegisterView();
-        objRegisterView.setVisible(true);
-
-        this.dispose();
-    }//GEN-LAST:event_btnCadastreseActionPerformed
-
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
         LoginDAO objLoginDAO = new LoginDAO();
         boolean verificar = objLoginDAO.logar();
@@ -196,6 +193,13 @@ public class frmLoginView extends javax.swing.JFrame {
             this.dispose();
         }
     }//GEN-LAST:event_btnEntrarActionPerformed
+
+    private void btnCadastreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastreActionPerformed
+        frmRegisterView objRegisterView = new frmRegisterView();
+        objRegisterView.setVisible(true);
+
+        this.dispose();
+    }//GEN-LAST:event_btnCadastreActionPerformed
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -210,16 +214,16 @@ public class frmLoginView extends javax.swing.JFrame {
     private javax.swing.JPanel PanelLinha2;
     private javax.swing.JPanel PanelLinha3;
     private javax.swing.JPanel PanelLogin;
-    private Component.ButtonCadastre btnCadastrese;
-    private Component.ButtonEntrar btnEntrar;
+    private Assets.Component.ButtonCadastre btnCadastre;
+    private Assets.Component.ButtonEntrar btnEntrar;
     private javax.swing.JButton btnEsqueci;
     private javax.swing.JLabel lblCopy;
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblEntre;
     private javax.swing.JLabel lblOu;
     private javax.swing.JLabel lblSenha;
-    public static solarsun.Assets.Component.TextFieldEmail txtEmail;
-    public static solarsun.Assets.Component.TextFieldSenha txtSenha;
+    public static Assets.Component.TextFieldEmail txtEmail;
+    public static Assets.Component.TextFieldSenha txtSenha;
     // End of variables declaration//GEN-END:variables
 
     private void Seticon() {

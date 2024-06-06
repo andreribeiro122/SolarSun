@@ -7,10 +7,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import solarsun.DTO.UsuarioDTO;
 
-/**
- *
- * @author Andre Souza
- */
 public class frmRegisterView extends javax.swing.JFrame {
 
     public frmRegisterView() {
@@ -29,27 +25,27 @@ public class frmRegisterView extends javax.swing.JFrame {
         lblCrie = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         lblNome = new javax.swing.JLabel();
-        txtNome = new solarsun.Assets.Component.TextFieldEmail();
-        txtEmail = new solarsun.Assets.Component.TextFieldEmail();
         lblEmail = new javax.swing.JLabel();
         lblCPF = new javax.swing.JLabel();
-        txtCPF = new solarsun.Assets.Component.TextFieldEmail();
-        txtCelular = new solarsun.Assets.Component.TextFieldEmail();
         lblCelular = new javax.swing.JLabel();
         lblEndereco = new javax.swing.JLabel();
-        txtEndereco = new solarsun.Assets.Component.TextFieldEmail();
-        txtNumero = new solarsun.Assets.Component.TextFieldEmail();
         lblNumero = new javax.swing.JLabel();
         lblComplemento = new javax.swing.JLabel();
-        txtComplemento = new solarsun.Assets.Component.TextFieldEmail();
-        txtCEP = new solarsun.Assets.Component.TextFieldEmail();
         lblCEP = new javax.swing.JLabel();
         lblSenha = new javax.swing.JLabel();
-        txtSenha = new solarsun.Assets.Component.TextFieldSenha();
-        txtConfirmarSenha = new solarsun.Assets.Component.TextFieldSenha();
         lblConfirmarSenha = new javax.swing.JLabel();
-        btnCadastro = new Component.ButtonEntrar();
         jButton1 = new javax.swing.JButton();
+        txtNome = new Assets.Component.TextFieldEmail();
+        txtNumero = new Assets.Component.TextFieldEmail();
+        txtEndereco = new Assets.Component.TextFieldEmail();
+        txtEmail = new Assets.Component.TextFieldEmail();
+        txtCEP = new Assets.Component.TextFieldEmail();
+        txtCelular = new Assets.Component.TextFieldEmail();
+        txtCPF = new Assets.Component.TextFieldEmail();
+        txtConfirmarSenha = new Assets.Component.TextFieldSenha();
+        txtSenha = new Assets.Component.TextFieldSenha();
+        txtComplemento = new Assets.Component.TextFieldEmail();
+        buttonEntrar1 = new Assets.Component.ButtonEntrar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SolarSun - Cadastro");
@@ -59,12 +55,15 @@ public class frmRegisterView extends javax.swing.JFrame {
         getContentPane().add(Imagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 0, -1, -1));
 
         PanelRegister.setBackground(new java.awt.Color(0, 18, 38));
+        PanelRegister.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/Logo.png"))); // NOI18N
+        PanelRegister.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, -1, -1));
 
         lblCrie.setFont(new java.awt.Font("Microsoft YaHei", 1, 18)); // NOI18N
         lblCrie.setForeground(new java.awt.Color(255, 255, 255));
         lblCrie.setText("Crie sua Conta!");
+        PanelRegister.add(lblCrie, new org.netbeans.lib.awtextra.AbsoluteConstraints(302, 75, -1, -1));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -79,54 +78,57 @@ public class frmRegisterView extends javax.swing.JFrame {
             .addGap(0, 1, Short.MAX_VALUE)
         );
 
+        PanelRegister.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 144, -1, -1));
+
         lblNome.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
         lblNome.setForeground(new java.awt.Color(255, 255, 255));
         lblNome.setText("Nome");
+        PanelRegister.add(lblNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, -1, -1));
 
         lblEmail.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
         lblEmail.setForeground(new java.awt.Color(255, 255, 255));
         lblEmail.setText("Email");
+        PanelRegister.add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(382, 170, -1, -1));
 
         lblCPF.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
         lblCPF.setForeground(new java.awt.Color(255, 255, 255));
         lblCPF.setText("CPF");
+        PanelRegister.add(lblCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 254, -1, -1));
 
         lblCelular.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
         lblCelular.setForeground(new java.awt.Color(255, 255, 255));
         lblCelular.setText("Celular");
+        PanelRegister.add(lblCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(382, 254, -1, -1));
 
         lblEndereco.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
         lblEndereco.setForeground(new java.awt.Color(255, 255, 255));
         lblEndereco.setText("Endereço");
+        PanelRegister.add(lblEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 338, -1, -1));
 
         lblNumero.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
         lblNumero.setForeground(new java.awt.Color(255, 255, 255));
         lblNumero.setText("Número");
+        PanelRegister.add(lblNumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(514, 338, -1, -1));
 
         lblComplemento.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
         lblComplemento.setForeground(new java.awt.Color(255, 255, 255));
         lblComplemento.setText("Complemento (Opcional)");
+        PanelRegister.add(lblComplemento, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 422, -1, -1));
 
         lblCEP.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
         lblCEP.setForeground(new java.awt.Color(255, 255, 255));
         lblCEP.setText("CEP");
+        PanelRegister.add(lblCEP, new org.netbeans.lib.awtextra.AbsoluteConstraints(382, 422, -1, -1));
 
         lblSenha.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
         lblSenha.setForeground(new java.awt.Color(255, 255, 255));
         lblSenha.setText("Senha");
+        PanelRegister.add(lblSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 506, -1, -1));
 
         lblConfirmarSenha.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
         lblConfirmarSenha.setForeground(new java.awt.Color(255, 255, 255));
         lblConfirmarSenha.setText("Confirmar Senha");
-
-        btnCadastro.setText("Cadastre-se");
-        btnCadastro.setFocusable(false);
-        btnCadastro.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
-        btnCadastro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCadastroActionPerformed(evt);
-            }
-        });
+        PanelRegister.add(lblConfirmarSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(382, 506, -1, -1));
 
         jButton1.setFont(new java.awt.Font("Microsoft YaHei", 0, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(243, 160, 28));
@@ -141,123 +143,57 @@ public class frmRegisterView extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        PanelRegister.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(231, 653, 258, -1));
 
-        javax.swing.GroupLayout PanelRegisterLayout = new javax.swing.GroupLayout(PanelRegister);
-        PanelRegister.setLayout(PanelRegisterLayout);
-        PanelRegisterLayout.setHorizontalGroup(
-            PanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelRegisterLayout.createSequentialGroup()
-                .addGap(80, 80, 80)
-                .addGroup(PanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblSenha)
-                    .addComponent(lblEndereco)
-                    .addGroup(PanelRegisterLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(152, 152, 152)
-                        .addComponent(lblCrie))
-                    .addGroup(PanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(PanelRegisterLayout.createSequentialGroup()
-                            .addGroup(PanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(PanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(PanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(PanelRegisterLayout.createSequentialGroup()
-                                            .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelRegisterLayout.createSequentialGroup()
-                                            .addComponent(lblNome)
-                                            .addGap(259, 259, 259)))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelRegisterLayout.createSequentialGroup()
-                                        .addComponent(lblCPF)
-                                        .addGap(276, 276, 276)))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelRegisterLayout.createSequentialGroup()
-                                    .addComponent(lblComplemento)
-                                    .addGap(128, 128, 128)))
-                            .addGroup(PanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(lblCEP)
-                                .addGroup(PanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(lblCelular)
-                                    .addComponent(lblEmail)
-                                    .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
-                                    .addComponent(txtCelular, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(lblNumero)
-                                        .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(txtCEP, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
-                                    .addComponent(txtConfirmarSenha, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addComponent(lblConfirmarSenha))))
-                    .addComponent(txtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(PanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(txtSenha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtComplemento, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)))
-                .addContainerGap(80, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelRegisterLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(PanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnCadastro, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(231, 231, 231))
-        );
-        PanelRegisterLayout.setVerticalGroup(
-            PanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelRegisterLayout.createSequentialGroup()
-                .addGroup(PanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelRegisterLayout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(jLabel1)
-                        .addGap(25, 25, 25))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelRegisterLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblCrie)
-                        .addGap(45, 45, 45)))
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25)
-                .addGroup(PanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNome)
-                    .addComponent(lblEmail))
-                .addGap(10, 10, 10)
-                .addGroup(PanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addGroup(PanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCPF)
-                    .addComponent(lblCelular))
-                .addGap(10, 10, 10)
-                .addGroup(PanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtCelular, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtCPF, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
-                .addGap(25, 25, 25)
-                .addGroup(PanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblEndereco)
-                    .addComponent(lblNumero))
-                .addGap(10, 10, 10)
-                .addGroup(PanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtNumero, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-                    .addComponent(txtEndereco, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
-                .addGap(25, 25, 25)
-                .addGroup(PanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblComplemento)
-                    .addComponent(lblCEP))
-                .addGap(10, 10, 10)
-                .addGroup(PanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtComplemento, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCEP, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addGroup(PanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblSenha)
-                    .addComponent(lblConfirmarSenha))
-                .addGap(10, 10, 10)
-                .addGroup(PanelRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtConfirmarSenha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addComponent(btnCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23)
-                .addComponent(jButton1)
-                .addGap(50, 50, 50))
-        );
+        txtNome.setForeground(new java.awt.Color(0, 0, 0));
+        txtNome.setFont(new java.awt.Font("Microsoft YaHei", 1, 12)); // NOI18N
+        PanelRegister.add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 199, 258, 30));
+
+        txtNumero.setForeground(new java.awt.Color(0, 0, 0));
+        txtNumero.setFont(new java.awt.Font("Microsoft YaHei", 1, 12)); // NOI18N
+        PanelRegister.add(txtNumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(514, 367, 126, 30));
+
+        txtEndereco.setForeground(new java.awt.Color(0, 0, 0));
+        txtEndereco.setFont(new java.awt.Font("Microsoft YaHei", 1, 12)); // NOI18N
+        PanelRegister.add(txtEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 367, 387, 30));
+
+        txtEmail.setForeground(new java.awt.Color(0, 0, 0));
+        txtEmail.setFont(new java.awt.Font("Microsoft YaHei", 1, 12)); // NOI18N
+        PanelRegister.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(382, 199, 258, 30));
+
+        txtCEP.setForeground(new java.awt.Color(0, 0, 0));
+        txtCEP.setFont(new java.awt.Font("Microsoft YaHei", 1, 12)); // NOI18N
+        PanelRegister.add(txtCEP, new org.netbeans.lib.awtextra.AbsoluteConstraints(382, 451, 258, 30));
+
+        txtCelular.setForeground(new java.awt.Color(0, 0, 0));
+        txtCelular.setFont(new java.awt.Font("Microsoft YaHei", 1, 12)); // NOI18N
+        PanelRegister.add(txtCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(382, 283, 258, 30));
+
+        txtCPF.setForeground(new java.awt.Color(0, 0, 0));
+        txtCPF.setFont(new java.awt.Font("Microsoft YaHei", 1, 12)); // NOI18N
+        PanelRegister.add(txtCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 283, 258, 30));
+
+        txtConfirmarSenha.setForeground(new java.awt.Color(0, 0, 0));
+        txtConfirmarSenha.setFont(new java.awt.Font("Microsoft YaHei", 1, 12)); // NOI18N
+        PanelRegister.add(txtConfirmarSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(382, 535, 258, 30));
+
+        txtSenha.setForeground(new java.awt.Color(0, 0, 0));
+        txtSenha.setFont(new java.awt.Font("Microsoft YaHei", 1, 12)); // NOI18N
+        PanelRegister.add(txtSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 535, 258, 30));
+
+        txtComplemento.setForeground(new java.awt.Color(0, 0, 0));
+        txtComplemento.setFont(new java.awt.Font("Microsoft YaHei", 1, 12)); // NOI18N
+        PanelRegister.add(txtComplemento, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 451, 258, 30));
+
+        buttonEntrar1.setText("Cadastre-se");
+        buttonEntrar1.setFocusable(false);
+        buttonEntrar1.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
+        buttonEntrar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonEntrar1ActionPerformed(evt);
+            }
+        });
+        PanelRegister.add(buttonEntrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(231, 600, 258, 30));
 
         getContentPane().add(PanelRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 720));
 
@@ -272,9 +208,9 @@ public class frmRegisterView extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void btnCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroActionPerformed
+    private void buttonEntrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEntrar1ActionPerformed
         Registro();
-    }//GEN-LAST:event_btnCadastroActionPerformed
+    }//GEN-LAST:event_buttonEntrar1ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -311,7 +247,7 @@ public class frmRegisterView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Imagem;
     private javax.swing.JPanel PanelRegister;
-    private Component.ButtonEntrar btnCadastro;
+    private Assets.Component.ButtonEntrar buttonEntrar1;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
@@ -326,16 +262,16 @@ public class frmRegisterView extends javax.swing.JFrame {
     private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblNumero;
     private javax.swing.JLabel lblSenha;
-    private solarsun.Assets.Component.TextFieldEmail txtCEP;
-    private solarsun.Assets.Component.TextFieldEmail txtCPF;
-    private solarsun.Assets.Component.TextFieldEmail txtCelular;
-    private solarsun.Assets.Component.TextFieldEmail txtComplemento;
-    private solarsun.Assets.Component.TextFieldSenha txtConfirmarSenha;
-    private solarsun.Assets.Component.TextFieldEmail txtEmail;
-    private solarsun.Assets.Component.TextFieldEmail txtEndereco;
-    private solarsun.Assets.Component.TextFieldEmail txtNome;
-    private solarsun.Assets.Component.TextFieldEmail txtNumero;
-    private solarsun.Assets.Component.TextFieldSenha txtSenha;
+    private Assets.Component.TextFieldEmail txtCEP;
+    private Assets.Component.TextFieldEmail txtCPF;
+    private Assets.Component.TextFieldEmail txtCelular;
+    private Assets.Component.TextFieldEmail txtComplemento;
+    private Assets.Component.TextFieldSenha txtConfirmarSenha;
+    private Assets.Component.TextFieldEmail txtEmail;
+    private Assets.Component.TextFieldEmail txtEndereco;
+    private Assets.Component.TextFieldEmail txtNome;
+    private Assets.Component.TextFieldEmail txtNumero;
+    private Assets.Component.TextFieldSenha txtSenha;
     // End of variables declaration//GEN-END:variables
 
     private static final String EMAIL_PATTERN
@@ -372,7 +308,7 @@ public class frmRegisterView extends javax.swing.JFrame {
             } else if (celular.length() != 11) {
                 JOptionPane.showMessageDialog(null, "Insira um número de Celular valido.");
             } else if (celular.matches("^[0-9]+$")) {
-                if (cpf.length() != 11) {
+                if (cpf.length() != 11 && cpf.matches("^[_A-Za-z]")) {
                     JOptionPane.showMessageDialog(null, "Insira um CPF valido.");
                 } else if (senha.equals(confirmarSenha)) {
                     UsuarioDTO objUsuarioDTO = new UsuarioDTO();

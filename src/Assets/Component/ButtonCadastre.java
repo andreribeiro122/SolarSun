@@ -1,4 +1,4 @@
-package Component;
+package Assets.Component;
 
 import java.awt.Color;
 import java.awt.Cursor;
@@ -7,8 +7,6 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
 import javax.swing.JButton;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import javax.swing.border.EmptyBorder;
 
 public class ButtonCadastre extends JButton {

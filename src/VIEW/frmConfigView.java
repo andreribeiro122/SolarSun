@@ -1,5 +1,6 @@
 package VIEW;
 
+import DAO.ClienteDAO;
 import DAO.ConfigDAO;
 import java.awt.Toolkit;
 
@@ -7,13 +8,22 @@ public class frmConfigView extends javax.swing.JFrame {
 
     public frmConfigView() {
         initComponents();
-        
+
         Seticon();
 
         btnAvatar.setName(frmHomeView.btnAvatar.getName());
 
         ConfigDAO objConfigDAO = new ConfigDAO();
         objConfigDAO.dados();
+        
+        ClienteDAO objClienteDAO = new ClienteDAO();
+        boolean veriAdm = objClienteDAO.verificaoADM();
+        
+        if (veriAdm == false) {
+            btnADM.setVisible(false);
+        } else {
+            btnADM.setVisible(true);
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -35,36 +45,35 @@ public class frmConfigView extends javax.swing.JFrame {
         btnAlterarNome = new javax.swing.JButton();
         btnAceitoNome = new javax.swing.JButton();
         btnCancelarNome = new javax.swing.JButton();
-        txtConfigNome = new solarsun.Assets.Component.TextFieldConfig();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         lblEndereco = new javax.swing.JLabel();
-        txtConfigEndereco = new solarsun.Assets.Component.TextFieldConfig();
         btnAlterarEndereco = new javax.swing.JButton();
         btnAceitarEndereco = new javax.swing.JButton();
         btnCancelarEndereco = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        txtConfigEmail = new solarsun.Assets.Component.TextFieldConfig();
         btnAlterarEmail = new javax.swing.JButton();
         btnAceitoEmail = new javax.swing.JButton();
         btnCancelarEmail = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        txtConfigCelular = new solarsun.Assets.Component.TextFieldConfig();
         btnAlterarCelular = new javax.swing.JButton();
         btnAceitarCelular = new javax.swing.JButton();
         btnCancelarCelular = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         btnAceitarSenha = new javax.swing.JButton();
         btnCancelarSenha = new javax.swing.JButton();
-        txtConfigSenha = new solarsun.Assets.Component.TextFieldConfigSenha();
-        txtConfigConfirmar = new solarsun.Assets.Component.TextFieldConfigSenha();
         btnAlterarSenha = new javax.swing.JButton();
         btnConfigEncerrar = new javax.swing.JButton();
         lblConfirmarSenha = new javax.swing.JLabel();
-        btnAvatar = new Component.ButtonEntrar();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btnSobreNos = new javax.swing.JButton();
+        btnSuporte = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
+        txtConfigCelular = new Assets.Component.TextFieldConfig();
+        txtConfigNome = new Assets.Component.TextFieldConfig();
+        txtConfigEmail = new Assets.Component.TextFieldConfig();
+        txtConfigEndereco = new Assets.Component.TextFieldConfig();
+        txtConfigConfirmar = new Assets.Component.TextFieldConfigSenha();
+        txtConfigSenha = new Assets.Component.TextFieldConfigSenha();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SolarSun - Configurações");
@@ -124,6 +133,11 @@ public class frmConfigView extends javax.swing.JFrame {
         btnDashboard.setContentAreaFilled(false);
         btnDashboard.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDashboard.setFocusable(false);
+        btnDashboard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDashboardActionPerformed(evt);
+            }
+        });
         BarraLateral.add(btnDashboard);
         btnDashboard.setBounds(16, 171, 38, 38);
 
@@ -133,6 +147,11 @@ public class frmConfigView extends javax.swing.JFrame {
         btnServices.setContentAreaFilled(false);
         btnServices.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnServices.setFocusable(false);
+        btnServices.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnServicesActionPerformed(evt);
+            }
+        });
         BarraLateral.add(btnServices);
         btnServices.setBounds(16, 232, 38, 38);
 
@@ -211,6 +230,7 @@ public class frmConfigView extends javax.swing.JFrame {
         btnAceitoNome.setBorderPainted(false);
         btnAceitoNome.setContentAreaFilled(false);
         btnAceitoNome.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAceitoNome.setFocusable(false);
         btnAceitoNome.setVisible(false);
         btnAceitoNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -224,6 +244,7 @@ public class frmConfigView extends javax.swing.JFrame {
         btnCancelarNome.setBorderPainted(false);
         btnCancelarNome.setContentAreaFilled(false);
         btnCancelarNome.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCancelarNome.setFocusable(false);
         btnCancelarNome.setVisible(false);
         btnCancelarNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -231,12 +252,6 @@ public class frmConfigView extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btnCancelarNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(617, 216, 25, 25));
-
-        txtConfigNome.setForeground(new java.awt.Color(255, 255, 255));
-        txtConfigNome.setDisabledTextColor(new java.awt.Color(204, 204, 204));
-        txtConfigNome.setEnabled(false);
-        txtConfigNome.setFont(new java.awt.Font("Microsoft YaHei", 1, 12)); // NOI18N
-        jPanel2.add(txtConfigNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(218, 214, 319, 30));
 
         jLabel2.setFont(new java.awt.Font("Microsoft YaHei", 1, 28)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
@@ -252,12 +267,6 @@ public class frmConfigView extends javax.swing.JFrame {
         lblEndereco.setForeground(new java.awt.Color(0, 0, 0));
         lblEndereco.setText("Endereço:");
         jPanel2.add(lblEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, 69, -1));
-
-        txtConfigEndereco.setForeground(new java.awt.Color(255, 255, 255));
-        txtConfigEndereco.setDisabledTextColor(new java.awt.Color(204, 204, 204));
-        txtConfigEndereco.setEnabled(false);
-        txtConfigEndereco.setFont(new java.awt.Font("Microsoft YaHei", 1, 12)); // NOI18N
-        jPanel2.add(txtConfigEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(218, 330, 319, 30));
 
         btnAlterarEndereco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/pencil.png"))); // NOI18N
         btnAlterarEndereco.setBorder(null);
@@ -306,12 +315,6 @@ public class frmConfigView extends javax.swing.JFrame {
         jLabel1.setText("Email:");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 272, -1, -1));
 
-        txtConfigEmail.setForeground(new java.awt.Color(255, 255, 255));
-        txtConfigEmail.setDisabledTextColor(new java.awt.Color(204, 204, 204));
-        txtConfigEmail.setEnabled(false);
-        txtConfigEmail.setFont(new java.awt.Font("Microsoft YaHei", 1, 12)); // NOI18N
-        jPanel2.add(txtConfigEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(218, 272, 319, 30));
-
         btnAlterarEmail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/pencil.png"))); // NOI18N
         btnAlterarEmail.setBorder(null);
         btnAlterarEmail.setBorderPainted(false);
@@ -358,12 +361,6 @@ public class frmConfigView extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Celular:");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 388, -1, -1));
-
-        txtConfigCelular.setForeground(new java.awt.Color(255, 255, 255));
-        txtConfigCelular.setDisabledTextColor(new java.awt.Color(204, 204, 204));
-        txtConfigCelular.setEnabled(false);
-        txtConfigCelular.setFont(new java.awt.Font("Microsoft YaHei", 1, 12)); // NOI18N
-        jPanel2.add(txtConfigCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 388, 319, 30));
 
         btnAlterarCelular.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/pencil.png"))); // NOI18N
         btnAlterarCelular.setBorder(null);
@@ -441,17 +438,6 @@ public class frmConfigView extends javax.swing.JFrame {
         });
         jPanel2.add(btnCancelarSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 580, 25, 25));
 
-        txtConfigSenha.setForeground(new java.awt.Color(255, 255, 255));
-        txtConfigSenha.setDisabledTextColor(new java.awt.Color(204, 204, 204));
-        txtConfigSenha.setEnabled(false);
-        txtConfigSenha.setFont(new java.awt.Font("Microsoft YaHei", 1, 12)); // NOI18N
-        jPanel2.add(txtConfigSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 446, 319, 30));
-
-        txtConfigConfirmar.setVisible(false);
-        txtConfigConfirmar.setForeground(new java.awt.Color(255, 255, 255));
-        txtConfigConfirmar.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
-        jPanel2.add(txtConfigConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 534, 319, 30));
-
         btnAlterarSenha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/pencil.png"))); // NOI18N
         btnAlterarSenha.setBorder(null);
         btnAlterarSenha.setBorderPainted(false);
@@ -485,31 +471,67 @@ public class frmConfigView extends javax.swing.JFrame {
         lblConfirmarSenha.setText("Confirmar Senha");
         lblConfirmarSenha.setVisible(false);
         jPanel2.add(lblConfirmarSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 504, 118, -1));
-        jPanel2.add(btnAvatar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 30, -1, 40));
 
-        jButton4.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(0, 0, 0));
-        jButton4.setText("Sobre Nós");
-        jButton4.setBorder(null);
-        jButton4.setBorderPainted(false);
-        jButton4.setContentAreaFilled(false);
-        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton4.setFocusable(false);
-        jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
+        btnSobreNos.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
+        btnSobreNos.setForeground(new java.awt.Color(0, 0, 0));
+        btnSobreNos.setText("Sobre Nós");
+        btnSobreNos.setBorder(null);
+        btnSobreNos.setBorderPainted(false);
+        btnSobreNos.setContentAreaFilled(false);
+        btnSobreNos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSobreNos.setFocusable(false);
+        jPanel2.add(btnSobreNos, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
 
-        jButton5.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(0, 0, 0));
-        jButton5.setText("Suporte ao Cliente");
-        jButton5.setBorder(null);
-        jButton5.setBorderPainted(false);
-        jButton5.setContentAreaFilled(false);
-        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton5.setFocusTraversalPolicyProvider(true);
-        jButton5.setFocusable(false);
-        jPanel2.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, -1, -1));
+        btnSuporte.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
+        btnSuporte.setForeground(new java.awt.Color(0, 0, 0));
+        btnSuporte.setText("Suporte ao Cliente");
+        btnSuporte.setBorder(null);
+        btnSuporte.setBorderPainted(false);
+        btnSuporte.setContentAreaFilled(false);
+        btnSuporte.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSuporte.setFocusTraversalPolicyProvider(true);
+        btnSuporte.setFocusable(false);
+        btnSuporte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSuporteActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnSuporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, -1, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/BGCONFIG.png"))); // NOI18N
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 210, -1, -1));
+        jPanel2.add(btnAvatar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 30, 40, 40));
+
+        txtConfigCelular.setForeground(new java.awt.Color(255, 255, 255));
+        txtConfigCelular.setEnabled(false);
+        txtConfigCelular.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
+        jPanel2.add(txtConfigCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(218, 388, 319, 30));
+
+        txtConfigNome.setForeground(new java.awt.Color(255, 255, 255));
+        txtConfigNome.setEnabled(false);
+        txtConfigNome.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
+        jPanel2.add(txtConfigNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(218, 214, 319, 30));
+
+        txtConfigEmail.setForeground(new java.awt.Color(255, 255, 255));
+        txtConfigEmail.setEnabled(false);
+        txtConfigEmail.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
+        jPanel2.add(txtConfigEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(218, 272, 319, 30));
+
+        txtConfigEndereco.setForeground(new java.awt.Color(255, 255, 255));
+        txtConfigEndereco.setEnabled(false);
+        txtConfigEndereco.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
+        jPanel2.add(txtConfigEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(218, 330, 319, 30));
+
+        txtConfigConfirmar.setVisible(false);
+        txtConfigConfirmar.setForeground(new java.awt.Color(255, 255, 255));
+        txtConfigConfirmar.setEnabled(false);
+        txtConfigConfirmar.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
+        jPanel2.add(txtConfigConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(218, 534, 319, 30));
+
+        txtConfigSenha.setForeground(new java.awt.Color(255, 255, 255));
+        txtConfigSenha.setEnabled(false);
+        txtConfigSenha.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
+        jPanel2.add(txtConfigSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(218, 446, 319, 30));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 1210, 720));
 
@@ -548,32 +570,32 @@ public class frmConfigView extends javax.swing.JFrame {
         frmHomeView objHomeView = new frmHomeView();
         objHomeView.setVisible(true);
 
-        dispose();
+        this.dispose();
     }//GEN-LAST:event_btnHomeLogoActionPerformed
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
         frmHomeView objHomeView = new frmHomeView();
         objHomeView.setVisible(true);
 
-        dispose();
+        this.dispose();
     }//GEN-LAST:event_btnHomeActionPerformed
 
     private void btnConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfigActionPerformed
-        frmConfigView objConfigView = new frmConfigView();
-        objConfigView.setVisible(true);
 
-        this.dispose();
     }//GEN-LAST:event_btnConfigActionPerformed
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         frmLoginView objLoginView = new frmLoginView();
         objLoginView.setVisible(true);
 
-        dispose();
+        this.dispose();
     }//GEN-LAST:event_btnLogoutActionPerformed
 
     private void btnADMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnADMActionPerformed
-        // TODO add your handling code here:
+        frmClientesView objClienteView = new frmClientesView();
+        objClienteView.setVisible(true);
+
+        this.dispose();
     }//GEN-LAST:event_btnADMActionPerformed
 
     private void btnAlterarEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarEmailActionPerformed
@@ -635,7 +657,7 @@ public class frmConfigView extends javax.swing.JFrame {
         txtConfigConfirmar.setVisible(true);
         btnAceitarSenha.setVisible(true);
         btnCancelarSenha.setVisible(true);
-        txtConfigSenha.setEnabled(true);
+        txtConfigConfirmar.setEnabled(true);
     }//GEN-LAST:event_btnAlterarSenhaActionPerformed
 
     private void btnCancelarSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarSenhaActionPerformed
@@ -643,9 +665,9 @@ public class frmConfigView extends javax.swing.JFrame {
         txtConfigConfirmar.setVisible(false);
         btnAceitarSenha.setVisible(false);
         btnCancelarSenha.setVisible(false);
-        txtConfigSenha.setEnabled(false);
+        txtConfigConfirmar.setEnabled(false);
 
-        frmConfigView.txtConfigSenha.setText("");
+        frmConfigView.txtConfigConfirmar.setText("");
         frmConfigView.txtConfigConfirmar.setText("");
     }//GEN-LAST:event_btnCancelarSenhaActionPerformed
 
@@ -661,10 +683,31 @@ public class frmConfigView extends javax.swing.JFrame {
         if (encerrarConta == true) {
             frmLoginView objLoginView = new frmLoginView();
             objLoginView.setVisible(true);
-            
+
             this.dispose();
         }
     }//GEN-LAST:event_btnConfigEncerrarActionPerformed
+
+    private void btnDashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDashboardActionPerformed
+        frmDashboardView objDashboardView = new frmDashboardView();
+        objDashboardView.setVisible(true);
+
+        this.dispose();
+    }//GEN-LAST:event_btnDashboardActionPerformed
+
+    private void btnServicesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnServicesActionPerformed
+        frmServicoView objServicoView = new frmServicoView();
+        objServicoView.setVisible(true);
+
+        this.dispose();
+    }//GEN-LAST:event_btnServicesActionPerformed
+
+    private void btnSuporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuporteActionPerformed
+        frmSuporteView objSuporteView = new frmSuporteView();
+        objSuporteView.setVisible(true);
+        
+        this.dispose();
+    }//GEN-LAST:event_btnSuporteActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -701,12 +744,12 @@ public class frmConfigView extends javax.swing.JFrame {
     public static javax.swing.JButton btnAceitarSenha;
     public static javax.swing.JButton btnAceitoEmail;
     public static javax.swing.JButton btnAceitoNome;
-    private javax.swing.JButton btnAlterarCelular;
-    private javax.swing.JButton btnAlterarEmail;
-    private javax.swing.JButton btnAlterarEndereco;
-    private javax.swing.JButton btnAlterarNome;
-    private javax.swing.JButton btnAlterarSenha;
-    public static Component.ButtonEntrar btnAvatar;
+    public static javax.swing.JButton btnAlterarCelular;
+    public static javax.swing.JButton btnAlterarEmail;
+    public static javax.swing.JButton btnAlterarEndereco;
+    public static javax.swing.JButton btnAlterarNome;
+    public static javax.swing.JButton btnAlterarSenha;
+    public static final Assets.Component.ButtonEntrar btnAvatar = new Assets.Component.ButtonEntrar();
     public static javax.swing.JButton btnCancelarCelular;
     public static javax.swing.JButton btnCancelarEmail;
     public static javax.swing.JButton btnCancelarEndereco;
@@ -720,8 +763,8 @@ public class frmConfigView extends javax.swing.JFrame {
     private javax.swing.JButton btnHomeLogo;
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnServices;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton btnSobreNos;
+    private javax.swing.JButton btnSuporte;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -732,12 +775,12 @@ public class frmConfigView extends javax.swing.JFrame {
     public static javax.swing.JLabel lblConfirmarSenha;
     private javax.swing.JLabel lblEndereco;
     private javax.swing.JLabel lblNome;
-    public static solarsun.Assets.Component.TextFieldConfig txtConfigCelular;
-    public static solarsun.Assets.Component.TextFieldConfigSenha txtConfigConfirmar;
-    public static solarsun.Assets.Component.TextFieldConfig txtConfigEmail;
-    public static solarsun.Assets.Component.TextFieldConfig txtConfigEndereco;
-    public static solarsun.Assets.Component.TextFieldConfig txtConfigNome;
-    public static solarsun.Assets.Component.TextFieldConfigSenha txtConfigSenha;
+    public static Assets.Component.TextFieldConfig txtConfigCelular;
+    public static Assets.Component.TextFieldConfigSenha txtConfigConfirmar;
+    public static Assets.Component.TextFieldConfig txtConfigEmail;
+    public static Assets.Component.TextFieldConfig txtConfigEndereco;
+    public static Assets.Component.TextFieldConfig txtConfigNome;
+    public static Assets.Component.TextFieldConfigSenha txtConfigSenha;
     // End of variables declaration//GEN-END:variables
     private void Seticon() {
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("LogoIcon.png")));
