@@ -31,8 +31,8 @@ public class ConfigDAO {
                 frmConfigView.txtConfigEndereco.setText(rs.getString(7));
                 frmConfigView.txtConfigCelular.setText(rs.getString(6));
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
+        } catch (SQLException error) {
+            JOptionPane.showMessageDialog(null, "dados: " + error);
         }
     }
 
@@ -55,8 +55,8 @@ public class ConfigDAO {
                 frmConfigView.btnAceitoNome.setVisible(false);
                 frmConfigView.btnCancelarNome.setVisible(false);
                 frmConfigView.txtConfigNome.setEnabled(false);
-            } catch (SQLException e) {
-                e.printStackTrace();
+            } catch (SQLException error) {
+                JOptionPane.showMessageDialog(null, "atualizarNome: " + error);
             }
         }
     }
@@ -102,12 +102,12 @@ public class ConfigDAO {
                             frmConfigView.btnAceitoEmail.setVisible(false);
                             frmConfigView.btnCancelarEmail.setVisible(false);
                             frmConfigView.txtConfigEmail.setEnabled(false);
-                        } catch (SQLException e) {
-                            e.printStackTrace();
+                        } catch (SQLException error) {
+                            JOptionPane.showMessageDialog(null, "atualizarEmail: " + error);
                         }
                     }
-                } catch (SQLException e) {
-                    e.printStackTrace();
+                } catch (SQLException error) {
+                    JOptionPane.showMessageDialog(null, "atualizarEmail: " + error);
                 }
             }
         } else {
@@ -199,8 +199,8 @@ public class ConfigDAO {
 
                 frmConfigView.txtConfigSenha.setText("");
                 frmConfigView.txtConfigConfirmar.setText("");
-            } catch (SQLException e) {
-                e.printStackTrace();
+            } catch (SQLException error) {
+                JOptionPane.showMessageDialog(null, "atualizarSenha: " + error);
             }
         } else {
             JOptionPane.showMessageDialog(null, "Os dois campos devem ser iguais.", "Erro no Campo", 0);
@@ -225,8 +225,8 @@ public class ConfigDAO {
             } else {
                 return false;
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
+        } catch (SQLException error) {
+            JOptionPane.showMessageDialog(null, "encerrarConta: " + error);
         }
         return false;
     }

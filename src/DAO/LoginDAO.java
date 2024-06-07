@@ -35,7 +35,7 @@ public class LoginDAO {
                     frmHomeView.btnADM.setVisible(false);
                     
                     return true;
-                } else if (perfil.equals("admin")) {
+                } else if (perfil.equals("admin") || perfil.equals("funcionario")) {
                     frmHomeView objHomeView = new frmHomeView();
                     objHomeView.setVisible(true);
                     frmHomeView.btnAvatar.setName(idUser);
@@ -47,8 +47,8 @@ public class LoginDAO {
             } else {
                 JOptionPane.showMessageDialog(null, "Email ou senha inválidos", "Erro nas Credenciais", 0);
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
+        } catch (SQLException error) {
+            JOptionPane.showMessageDialog(null, "logar: " + error);
         }
         return false;
     }

@@ -44,7 +44,7 @@ public class RegisterDAO {
                 return true;
             }
         } catch (SQLException error) {
-            error.printStackTrace();
+            JOptionPane.showMessageDialog(null, "registrarUsuario: " + error);
         } finally {
             ConexaoDAO.fecharConexao(conn, stmt);
         }
@@ -52,8 +52,8 @@ public class RegisterDAO {
     }
 
     public ResultSet verificarEmail(UsuarioDTO usuarioDTO) {
-        Connection conn = null;
-        PreparedStatement stmt = null;
+        Connection conn;
+        PreparedStatement stmt;
 
         try {
             conn = ConexaoDAO.obterConexao();
@@ -67,7 +67,7 @@ public class RegisterDAO {
 
             return rsEmail;
         } catch (SQLException error) {
-            error.printStackTrace();
+            JOptionPane.showMessageDialog(null, "verificarEmail: " + error);
             return null;
         }
     }

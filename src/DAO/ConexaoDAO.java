@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.PreparedStatement;
+import javax.swing.JOptionPane;
 
 public class ConexaoDAO {
     private static final String URL = "jdbc:mysql://localhost:3306/solarsun";
@@ -15,7 +16,7 @@ public class ConexaoDAO {
         try {
             conexao = DriverManager.getConnection(URL, USUARIO, SENHA);
         } catch (SQLException error) {
-            error.printStackTrace();
+            JOptionPane.showMessageDialog(null, "obterConexao: " + error);
         }
         return conexao;
     }
@@ -30,7 +31,7 @@ public class ConexaoDAO {
                 conn.close();
             }
         } catch (SQLException  error) {
-            error.printStackTrace();
+            JOptionPane.showMessageDialog(null, "fecharConexao: " + error);
         }
     }
 }
