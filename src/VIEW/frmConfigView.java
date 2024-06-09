@@ -658,6 +658,7 @@ public class frmConfigView extends javax.swing.JFrame {
         btnAceitarSenha.setVisible(true);
         btnCancelarSenha.setVisible(true);
         txtConfigConfirmar.setEnabled(true);
+        txtConfigSenha.setEnabled(true);
     }//GEN-LAST:event_btnAlterarSenhaActionPerformed
 
     private void btnCancelarSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarSenhaActionPerformed
@@ -666,6 +667,7 @@ public class frmConfigView extends javax.swing.JFrame {
         btnAceitarSenha.setVisible(false);
         btnCancelarSenha.setVisible(false);
         txtConfigConfirmar.setEnabled(false);
+        txtConfigSenha.setEnabled(false);
 
         frmConfigView.txtConfigConfirmar.setText("");
         frmConfigView.txtConfigConfirmar.setText("");

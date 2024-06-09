@@ -89,7 +89,7 @@ public class ClienteDAO {
                 frmClientesView.txtNome.setText(rs.getString(3));
                 frmClientesView.txtPerfil.setText(rs.getString(2));
             } else {
-                JOptionPane.showMessageDialog(null, "Usuário náo existe ou digite apenas números.");
+                JOptionPane.showMessageDialog(null, "Usuário não existe ou digite apenas números.");
             }
         } catch (SQLException e) {
             e.printStackTrace();

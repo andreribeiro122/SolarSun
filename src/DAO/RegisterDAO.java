@@ -1,6 +1,6 @@
 package DAO;
 
-import solarsun.DTO.UsuarioDTO;
+import DTO.UsuarioDTO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -52,8 +52,8 @@ public class RegisterDAO {
     }
 
     public ResultSet verificarEmail(UsuarioDTO usuarioDTO) {
-        Connection conn;
-        PreparedStatement stmt;
+        Connection conn = null;
+        PreparedStatement stmt = null;
 
         try {
             conn = ConexaoDAO.obterConexao();

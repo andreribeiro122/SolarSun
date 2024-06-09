@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 import DAO.RegisterDAO;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import solarsun.DTO.UsuarioDTO;
+import DTO.UsuarioDTO;
 
 public class frmRegisterView extends javax.swing.JFrame {
 

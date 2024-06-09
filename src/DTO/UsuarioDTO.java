@@ -1,4 +1,4 @@
-package solarsun.DTO;
+package DTO;
 
 public class UsuarioDTO {
     private String perfil, nome, email, cpf, celular, endereco, numero, complemento, cep, senha;

@@ -43,7 +43,10 @@ public class frmSuporteView extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+        setMinimumSize(new java.awt.Dimension(1280, 720));
+        setPreferredSize(new java.awt.Dimension(1280, 720));
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         BarraLateral3.setBackground(new java.awt.Color(0, 18, 38));
         BarraLateral3.setLayout(null);
@@ -167,8 +170,7 @@ public class frmSuporteView extends javax.swing.JFrame {
         BarraLateral3.add(btnADM);
         btnADM.setBounds(16, 354, 38, 38);
 
-        getContentPane().add(BarraLateral3);
-        BarraLateral3.setBounds(0, 0, 70, 720);
+        getContentPane().add(BarraLateral3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 70, 720));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -222,10 +224,10 @@ public class frmSuporteView extends javax.swing.JFrame {
         });
         jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, -1, -1));
 
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(70, 0, 1210, 720);
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, -1, -1));
 
-        pack();
+        setSize(new java.awt.Dimension(1296, 748));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnHomeLogo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeLogo3ActionPerformed
