@@ -3,11 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Andre%20Souza/Documents/ProjetoA3/solarsun/src/DAO/ConexaoDAO.java</file>
-            <file>file:/C:/Users/Andre%20Souza/Documents/ProjetoA3/solarsun/src/DAO/LoginDAO.java</file>
-            <file>file:/C:/Users/Andre%20Souza/Documents/ProjetoA3/solarsun/src/DAO/RegisterDAO.java</file>
-            <file>file:/C:/Users/Andre%20Souza/Documents/ProjetoA3/solarsun/src/DAO/ConfigDAO.java</file>
-            <file>file:/C:/Users/Andre%20Souza/Documents/ProjetoA3/solarsun/src/DAO/ClienteDAO.java</file>
+            <file>file:/C:/Users/Andre%20Souza/Documents/ProjetoA3/solarsun/src/VIEW/frmSuporteClienteView.java</file>
+            <file>file:/C:/Users/Andre%20Souza/Documents/ProjetoA3/solarsun/src/VIEW/frmHomeView.java</file>
+            <file>file:/C:/Users/Andre%20Souza/Documents/ProjetoA3/solarsun/src/VIEW/frmClientesView.java</file>
         </group>
     </open-files>
 </project-private>
