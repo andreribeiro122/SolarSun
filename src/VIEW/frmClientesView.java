@@ -69,6 +69,7 @@ public class frmClientesView extends javax.swing.JFrame {
         btnLimpar = new javax.swing.JButton();
         btnAvatar = new Assets.Component.ButtonEntrar();
         txtNome = new Assets.Component.TextFieldConfig();
+        jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SolarSun - Dashboard Funcionario");
@@ -416,6 +417,9 @@ public class frmClientesView extends javax.swing.JFrame {
         txtNome.setFont(new java.awt.Font("Microsoft YaHei", 1, 14)); // NOI18N
         jPanel1.add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 210, 250, 35));
 
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/PIZZA.png"))); // NOI18N
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 420, -1, -1));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 1210, 720));
 
         pack();
@@ -541,6 +545,7 @@ public class frmClientesView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
